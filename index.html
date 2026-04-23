@@ -929,7 +929,8 @@
     function initName() {
       const userName = localStorage.getItem('userName');
       if (userName === null) {
-        openNameModal();
+        // Delay modal until after preloader finishes (2500ms timeout + 600ms fade)
+        setTimeout(openNameModal, 3200);
       }
       document.getElementById('name-save').addEventListener('click', saveName);
       document.getElementById('name-skip').addEventListener('click', skipName);
