@@ -625,16 +625,14 @@
       opacity: 1;
     }
 
-    /* Lift content above canvas — only non-fixed elements need position:relative */
-    #name-modal,
+    /* Lift dashboard grid above canvas */
     .dashboard-grid {
       position: relative;
       z-index: 1;
     }
 
-    /* Fixed overlays already have their own stacking context — just ensure z-index beats canvas (z-index:0) */
-    /* #preloader z-index: 10000 — already defined above, no override needed */
-    /* #theme-toggle z-index: 9998 — already defined above, no override needed */
+    /* Fixed overlays (#preloader z-index:10000, #name-modal z-index:9000, #theme-toggle z-index:9998)
+       already stack above canvas (z-index:0) — no override needed */
   </style>
 </head>
 <body>
